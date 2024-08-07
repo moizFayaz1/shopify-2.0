@@ -1,0 +1,625 @@
+@font-face {
+  font-family: "Learphard";
+  src: url("./fonts/otf/leophard-leophard-regular-400.otf") format("truetype"),
+    url("./fonts/ttf/leophard-leophard-regular-inline-700.ttf")
+      format("opentype");
+}
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Teko:wght@300..700&display=swap");
+@font-face {
+  font-family: "Chicharito";
+  src: url("fonts/Chicharito/Chicharito-z8P3a.otf") format("opentype");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  /* background-image: url("https://outlawdip-dev.myshopify.com/cdn/shop/files/home-bg.jpg?v=1719513317"); */
+  background-image: url("./images/home-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  display: block;
+  width: 100vw;
+  overflow: auto;
+  width: 100vw;
+  height: 1200vh;
+  background-position: center;
+  font-family: "Learphard";
+  color: white;
+  border: 2px dashed #5c3520;
+  max-width: 90%;
+  margin: 0 auto;
+  margin-top: 50px;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 2px dashed #5c3520;
+  vertical-align: baseline;
+  position: relative;
+}
+
+.header img {
+  cursor: pointer;
+}
+
+.menu-cart-icon {
+  display: flex;
+  gap: 1rem;
+}
+
+.logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -60%);
+}
+
+.logo img {
+  width: 80px;
+  height: 80px;
+}
+
+.hero {
+  display: flex;
+  padding: 0px 30px;
+  position: relative;
+}
+
+.border-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 80vw;
+  transform: translate(-50%, 0%);
+  border-bottom: 2px dashed #5c3520;
+}
+
+.right {
+  width: 47%;
+  /* background-color: blue; */
+}
+
+.right .hero-mini-title {
+  font-size: 26px;
+  color: #f8dfb6;
+  text-shadow: rgb(33, 22, 3) 0px 5px 0px;
+}
+
+.right .hero-title {
+  font-size: 80px;
+  line-height: 0.8;
+  text-transform: uppercase;
+  font-family: "Chicharito";
+  color: #fcf0dd;
+  margin: 0;
+  /* letter-spacing: 1px; */
+}
+
+.right .hero-buttons {
+  display: flex;
+  gap: 1rem;
+  padding-top: 20px;
+}
+
+.right .hero-buttons button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: center;
+  font-family: "Chicharito";
+  text-transform: uppercase;
+  border-radius: 2.5rem;
+  letter-spacing: 1px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  padding: 1.3rem 1rem;
+  border: none;
+  line-height: 1;
+  gap: 10px;
+}
+
+.right .hero-buttons button img {
+  vertical-align: center;
+  width: 15px;
+  margin-top: -2px;
+}
+
+.right .bold-falovr {
+  display: flex;
+  gap: 10px;
+  padding-top: 20px;
+}
+
+.right .bold-falovr p {
+  font-family: "Learphard" !important;
+  font-size: 2rem;
+  text-transform: uppercase;
+  /* line-height: 1; */
+  letter-spacing: 1px;
+  color: #f8dfb6;
+}
+
+.right .product-counter {
+  display: flex;
+  align-items: center;
+  padding-bottom: 10rem;
+  margin-top: 20px;
+  gap: 1rem;
+}
+
+.right .product-counter .progress {
+  height: 0.8rem;
+  background-color: #cb9a59cf;
+  width: 180px;
+  border-radius: 1rem;
+  margin-top: 0.7rem;
+}
+
+.right .product-counter span {
+  font-size: 26px;
+  color: #f8dfb6;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  padding: 25px 20px;
+  width: 53%;
+  /* gap: 1rem; */
+}
+
+.left .products {
+  display: flex;
+  gap: 1rem;
+}
+
+.left .arrow-slider {
+  display: flex;
+  background-color: rgb(67 51 37 / 42%);
+  padding: 6px 10px;
+  border-radius: 2rem;
+  align-self: self-end;
+  gap: 15px;
+  position: relative;
+}
+
+.left .arrow-slider .right-arrow {
+  background-color: rgb(210 180 140 / 18%);
+  /* background-color: rgb(203, 154, 89); */
+  cursor: pointer;
+  border-radius: 50px;
+  width: 55px;
+  height: 55px;
+  line-height: 1;
+  position: relative;
+}
+
+.left .arrow-slider .left-arrow {
+  background-color: rgb(203, 154, 89);
+  cursor: pointer;
+  border-radius: 50px;
+  width: 55px;
+  height: 55px;
+  line-height: 1;
+  position: relative;
+}
+
+.left .arrow-slider .left-arrow-icon,
+.right-arrow-icon {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+}
+
+.left .products img {
+  padding: 1rem;
+  border-bottom: 3px dashed rgb(248, 223, 182, 0.7);
+  border-radius: 50%;
+}
+
+.left .bull-icon {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 60%);
+}
+
+.explore-nic {
+  padding-top: 6rem;
+  position: relative;
+}
+
+.explore-nic p {
+  text-align: center;
+  font-size: 20px;
+  text-shadow: rgb(33, 22, 3) 0px 5px 0px;
+  color: #f8dfb6;
+  padding-bottom: 2rem;
+}
+
+.explore-nic button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Chicharito";
+  text-transform: uppercase;
+  border-radius: 2.5rem;
+  letter-spacing: 1px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  padding: 1rem;
+  border: none;
+  line-height: 1;
+  gap: 10px;
+}
+
+.best-selling {
+  padding: 2rem 0;
+}
+
+.best-selling .selling-title {
+  font-size: 80px;
+  margin: 0;
+  text-align: center;
+  font-family: "Chicharito";
+  letter-spacing: 1px;
+  color: #fcf0dd;
+  text-transform: uppercase;
+}
+
+.best-selling .selling-desc {
+  font-size: 32px;
+  text-align: center;
+  font-family: "Learphard";
+  letter-spacing: 1px;
+  color: #fcf0dd;
+  text-transform: uppercase;
+}
+
+.best-selling-products {
+  display: flex;
+  justify-content: center;
+  color: #f9e3b4;
+  font-size: 38px;
+  font-family: "Learphard";
+  padding: 1rem;
+  margin: 0;
+  gap: 1rem;
+  position: relative;
+}
+
+.best-selling-products .product {
+  border-left: 2px dashed #5c3520;
+  text-align: center;
+  margin: 0;
+}
+
+.best-selling-products .product .proudct-image {
+  position: relative;
+}
+
+.best-selling-products .product .product-color {
+  /* background-color: #d14545; */
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  position: absolute;
+  bottom: -18%;
+  right: 50%;
+  transform: translate(50%, 0%);
+}
+
+.best-selling-products .product:first-child {
+  border-left: none;
+}
+
+.best-selling-products .product-detail p {
+  margin-bottom: 1.3rem;
+}
+
+.product-original-price {
+  margin-top: -30px;
+  text-decoration: line-through;
+  text-decoration-thickness: 3px;
+  text-decoration-color: #f9e3b4;
+  filter: brightness(0.7);
+}
+
+product-original-price::-webkit-line-th {
+  color: black;
+}
+
+.best-selling-products .product-detail .add-to-cart {
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  align-items: center;
+  color: #f8dfb6;
+  vertical-align: center;
+  font-family: inherit;
+  text-transform: uppercase;
+  border-radius: 2.5rem;
+  letter-spacing: 1px;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 1.5rem 1rem;
+  margin: 0 auto;
+  border: 2px solid #594431;
+  line-height: 1;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+  height: 2.5rem;
+}
+
+.best-selling-products .product-detail .add-to-cart .text {
+  display: inline-block;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  position: relative;
+}
+
+.best-selling-products .product-detail .add-to-cart::after {
+  /* content: attr(data-text); */
+  content: "ADD TO CART";
+  position: absolute;
+  left: 17%;
+  bottom: 0%;
+  width: 100%;
+  text-align: center;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  color: #f8dfb6;
+  font-family: inherit;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 20px;
+  opacity: 0;
+}
+
+.best-selling-products .product-detail .add-to-cart:hover .text {
+  transform: translateY(-200%);
+  opacity: 0;
+}
+
+.best-selling-products .product-detail .add-to-cart:hover::after {
+  transform: translateY(-80%);
+  opacity: 1;
+}
+
+.best-selling-products .product .proudct-image img {
+  cursor: pointer;
+  /* transition: transform 0.3s ease; */
+  /* transform: scale(1); */
+}
+
+.best-selling-products .product .proudct-image img:hover {
+  transform: scale(1.1, 1.1);
+}
+
+.best-selling .product-detail .with-nic {
+  background-color: #ffffff1a;
+  border-radius: 2.5rem;
+  padding-bottom: 10px;
+  margin: 1rem;
+}
+
+.best-selling .product-detail .with-nic button {
+  font-family: inherit;
+  text-transform: uppercase;
+  border-radius: 2.5rem;
+  letter-spacing: 1px;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #cb9a58;
+  padding: 0 1rem;
+  border: none;
+  gap: 1rem;
+  height: 2.5rem;
+}
+
+.product-border-middle {
+  position: absolute;
+  top: 36%;
+  left: 50%;
+  width: 80vw;
+  transform: translate(-50%, 50%);
+  border-bottom: 2px dashed #5c3520;
+}
+.product-border-bottom {
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  width: 80vw;
+  transform: translate(-50%, 50%);
+  border-bottom: 2px dashed #5c3520;
+}
+
+.satisfaction {
+  padding: 2rem;
+}
+
+.satisfaction p:first-child {
+  font-size: 80px;
+  line-height: 0.8;
+  text-transform: uppercase;
+  font-family: "Chicharito";
+  color: #fcf0dd;
+  margin: 0;
+  text-align: center;
+}
+
+.satisfaction .speak-volume {
+  font-size: 120px;
+  text-align: center;
+  font-family: "Chicharito";
+  margin: 0;
+  padding: 1.7rem;
+  background: transparent;
+  color: transparent;
+  -webkit-text-stroke: 0.06vw #fcf0dd;
+}
+
+.satisfaction .coins {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 3rem;
+  gap: 3rem;
+}
+
+.satisfaction .coins .coin {
+  display: flex;
+  gap: 1rem;
+}
+
+.satisfaction .coins .coin p {
+  font-family: "Chicharito";
+  font-size: 22px;
+  letter-spacing: 1px;
+  text-shadow: 0px 5px 0px rgba(33, 22, 3, 0.53);
+  line-height: 1.1;
+}
+
+.profile-container {
+  display: flex;
+  justify-content: center;
+  row-gap: 0;
+  column-gap: 5rem;
+  flex-wrap: wrap;
+  padding: 2rem;
+}
+
+.profile-background-circle {
+  position: relative;
+}
+
+.profile-content {
+  position: absolute;
+  top: 10%;
+  right: 50%;
+  transform: translate(50%, 0);
+  text-align: center;
+  width: 250px;
+}
+
+.profile-content .profile-name {
+  font-size: 22px;
+  color: #f8dfb6;
+  font-family: "Chicharito";
+  margin: 0;
+  padding-top: 2.3rem;
+}
+
+.profile-content .profile-verified {
+  font-size: 16px;
+  color: #f8dfb6;
+  margin: 0;
+}
+
+.profile-content .profile-title {
+  font-size: 22px;
+  text-transform: uppercase;
+  color: #f8dfb6;
+  font-family: "Chicharito";
+  letter-spacing: 1px;
+  margin: 0;
+  padding-top: 2.5rem;
+}
+
+.profile-content .profile-desc {
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #f8dfb6;
+  margin: 0;
+}
+
+.profile-background-circle img {
+  width: 350px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.profile-rating {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding-top: 5px;
+}
+
+.rating-star {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e3a001;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+}
+
+.profile-rating .rating-star img {
+  width: 20px;
+}
+
+.profile {
+  position: relative;
+}
+
+.profile-image {
+  position: absolute;
+  top: 0;
+  right: 50%;
+  transform: translate(50%, -50%);
+}
+
+.shooter {
+  padding: 2rem;
+  margin-top: 10rem;
+  position: relative;
+}
+
+.shooter .gun-img {
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.shooter .shooter-title {
+  font-size: 140px;
+  font-family: "Chicharito";
+  text-align: center;
+  margin: 0;
+}
+
+.shooter .shoot-discount {
+  font-size: 35px;
+  color: #e0d0b6;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+}
+
+.shooter-border-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 80vw;
+  height: 1rem;
+  transform: translate(-50%, 0%);
+  border-bottom: 2px dashed #5c3520;
+}
+
