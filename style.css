@@ -10,6 +10,17 @@
   src: url("fonts/Chicharito/Chicharito-z8P3a.otf") format("opentype");
 }
 
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -181,6 +192,16 @@ body {
 .left .products {
   display: flex;
   gap: 1rem;
+  position: relative;
+  /* background-color: #5c3520; */
+}
+
+.player-of-the-month {
+  position: absolute;
+  /* border-bottom: transparent; */
+  top: 20%;
+  left: 12%;
+  width: 100px;
 }
 
 .left .arrow-slider {
@@ -222,9 +243,9 @@ body {
   transform: translate(50%, -50%);
 }
 
-.left .products img {
+.left .products .hero-bg-product-img {
   padding: 1rem;
-  border-bottom: 3px dashed rgb(248, 223, 182, 0.7);
+  border-bottom: 2px dashed rgb(248, 223, 182, 0.7);
   border-radius: 50%;
 }
 
@@ -314,7 +335,6 @@ body {
 }
 
 .best-selling-products .product .product-color {
-  /* background-color: #d14545; */
   height: 40px;
   width: 40px;
   border-radius: 100%;
@@ -322,6 +342,7 @@ body {
   bottom: -18%;
   right: 50%;
   transform: translate(50%, 0%);
+  z-index: 1;
 }
 
 .best-selling-products .product:first-child {
@@ -344,24 +365,28 @@ product-original-price::-webkit-line-th {
   color: black;
 }
 
+.add-to-cart img {
+  width: 35px;
+}
+
 .best-selling-products .product-detail .add-to-cart {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   background-color: transparent;
   align-items: center;
-  color: #f8dfb6;
-  vertical-align: center;
+  /* color: #f8dfb6; */
+  color: white;
   font-family: inherit;
   text-transform: uppercase;
   border-radius: 2.5rem;
-  letter-spacing: 1px;
+  width: 180px;
+  /* letter-spacing: 1px; */
   font-size: 20px;
   cursor: pointer;
   padding: 1.5rem 1rem;
   margin: 0 auto;
-  border: 2px solid #594431;
-  line-height: 1;
-  gap: 1rem;
+  border: 2px solid rgb(89, 68, 49, 0.5);
+  gap: 8px;
   position: relative;
   overflow: hidden;
   height: 2.5rem;
@@ -371,22 +396,24 @@ product-original-price::-webkit-line-th {
   display: inline-block;
   transition: transform 0.3s ease-out, opacity 0.3s ease-out;
   position: relative;
+  padding-bottom: 10px;
 }
 
 .best-selling-products .product-detail .add-to-cart::after {
   /* content: attr(data-text); */
   content: "ADD TO CART";
   position: absolute;
-  left: 17%;
-  bottom: 0%;
+  left: 0%;
+  left: 8%;
+  bottom: 10%;
   width: 100%;
   text-align: center;
   transition: transform 0.3s ease-out, opacity 0.3s ease-out;
-  color: #f8dfb6;
+  /* color: #f8dfb6; */
   font-family: inherit;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 20px;
+  font-size: inherit;
   opacity: 0;
 }
 
@@ -500,7 +527,7 @@ product-original-price::-webkit-line-th {
   row-gap: 0;
   column-gap: 5rem;
   flex-wrap: wrap;
-  padding: 2rem;
+  padding-top: 2rem;
 }
 
 .profile-background-circle {
@@ -586,14 +613,16 @@ product-original-price::-webkit-line-th {
 }
 
 .shooter {
-  padding: 2rem;
-  margin-top: 10rem;
+  /* padding: 2rem; */
+  /* margin-top: 10rem; */
+  padding-top: 6rem;
   position: relative;
+  /* background-color: #5c3e26; */
 }
 
 .shooter .gun-img {
   position: absolute;
-  top: -10%;
+  top: 0%;
   left: 50%;
   transform: translate(-50%, 0);
 }
@@ -603,6 +632,7 @@ product-original-price::-webkit-line-th {
   font-family: "Chicharito";
   text-align: center;
   margin: 0;
+  line-height: 0.8;
 }
 
 .shooter .shoot-discount {
@@ -611,6 +641,7 @@ product-original-price::-webkit-line-th {
   text-transform: uppercase;
   text-align: center;
   margin: 0;
+  padding-bottom: 3rem;
 }
 
 .shooter-border-bottom {
@@ -623,3 +654,644 @@ product-original-price::-webkit-line-th {
   border-bottom: 2px dashed #5c3520;
 }
 
+.shoot-main-container {
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 2rem;
+  position: relative;
+  margin: 0 2rem;
+  border-bottom: 2px dashed #5c3520;
+  position: relative;
+  /* overflow-y: auto; */
+  /* background-color: #af7c2b; */
+}
+
+.shotted-product-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  opacity: 0.4;
+  padding-top: 3rem;
+}
+
+.shotted-product {
+  display: flex;
+  justify-content: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  border: 2px dashed #d2b48c;
+  width: 250px;
+  border-radius: 40px;
+  padding: 8px;
+}
+
+.shotted-product-container .shotted-product-profile-image {
+  background-color: #5c3e26;
+  padding: 1.5rem;
+  border-radius: 50px;
+}
+
+.shotted-product .shotted-product-title {
+  color: hsl(28.5deg 24.39% 32.16%);
+  font-size: 24px;
+  text-transform: uppercase;
+  margin: 0;
+  margin-top: 8px;
+}
+
+.shotted-product-checkout-btn .shotted-product-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+  color: #312113;
+  border-radius: 50px;
+  background-color: #cb9a59;
+  border: none;
+  font-family: "Learphard";
+  pointer-events: none;
+  padding: 1rem;
+  width: 100%;
+}
+
+.shoot-products-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  width: 63%;
+  padding: 0 3rem;
+  border-left: 2px dashed #5c3520;
+  padding-bottom: 1rem;
+  position: relative;
+  max-height: 1000px;
+  overflow-y: auto;
+}
+
+.shoot-products-container::-webkit-scrollbar {
+  display: none;
+}
+
+.shoot-single-product {
+  border-bottom: 2px dashed #5c3520;
+  text-align: center;
+  padding: 1rem 0;
+  min-height: 630px;
+  /* background-color: lightgreen; */
+}
+
+.shoot-single-product .shoot-product-image {
+  border-bottom: 2px dashed #5c3520;
+  position: relative;
+}
+
+/* .shoot-single-product:nth-child(3), */
+.shoot-single-product:last-child {
+  border: none;
+}
+
+.shoot-product-detail .shoot-product-title {
+  font-size: 38px;
+  color: #f9e3b4;
+  /* min-height: 200px; */
+  padding: 0 1rem;
+}
+
+.shoot-product-detail .shoot-product-price {
+  font-size: 32px;
+  color: #f9e3b4;
+}
+
+.shoot-product-detail button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  border: 2px solid #4a3827;
+  width: 65%;
+  margin: 0 auto;
+  height: 65px;
+  background: transparent;
+  color: white;
+  font-family: inherit;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.shoot-product-image img:hover {
+  transform: scale(1.1, 1.1);
+  cursor: pointer;
+}
+
+.add-to-bundle-arrow {
+  width: 15%;
+}
+
+.add-to-bundle-arrow {
+  background-color: rgb(203, 154, 89);
+  border-radius: 50%;
+  background-size: cover;
+  padding: 5px;
+  vertical-align: text-top;
+  margin-top: 5px;
+}
+
+.add-to-bundle-icon {
+  width: 30px;
+  vertical-align: text-bottom;
+  margin-top: 5px;
+}
+
+.shoot-container-middle-border {
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  width: 80vw;
+  padding: 3rem 0;
+  transform: translate(-50%, 0%);
+  border-bottom: 2px dashed #5c3520;
+}
+
+.vertical-line {
+  position: absolute;
+  top: 0;
+  height: inherit;
+  border-bottom: 2px dashed #5c3520;
+  width: 0;
+  position: relative;
+}
+
+.vertical-line::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 572px;
+  transform: translate(-100%, 0%);
+  border-left: 2px dashed #5c3520;
+  z-index: -1;
+}
+
+.shoot-product-color {
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  position: absolute;
+  bottom: -10%;
+  right: 50%;
+  transform: translate(50%, 0%);
+  z-index: 1;
+}
+
+.sale-tag {
+  position: absolute;
+  background-color: #d14545;
+  color: white;
+  top: 0;
+  right: 10%;
+  font-size: 17px;
+  border-radius: 30px;
+  width: fit-content;
+  padding-bottom: 5px;
+}
+
+.sale-tag span {
+  padding: 5rem 10px;
+  letter-spacing: 1px;
+}
+
+.monthly-spotlight {
+  /* background-color: green; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 18rem;
+  gap: 4rem;
+  padding-bottom: 10rem;
+}
+
+.spotlight-left .spotlight-title {
+  font-size: 100px;
+  line-height: 0.8;
+  text-transform: uppercase;
+  font-family: "Chicharito";
+  color: #fcf0dd;
+  margin: 0;
+  line-height: 0.8;
+}
+
+.spotlight-left button {
+  color: #312113;
+  font-size: 20px;
+  text-transform: uppercase;
+  padding: 12px 30px;
+  border-radius: 40px;
+  display: flex;
+  gap: 20px;
+  font-family: "Chicharito";
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  letter-spacing: 1px;
+}
+
+.outlaws {
+  margin-top: 5rem;
+  /* background-color: green; */
+  text-align: center;
+  position: relative;
+}
+
+.outlaws .outlaws-title {
+  font-size: 120px;
+  text-transform: uppercase;
+  font-family: "Chicharito";
+  color: #fcf0dd;
+  margin: 0;
+}
+
+.outlaws .outlaws-tag {
+  font-size: 235px;
+  -webkit-text-stroke: 0.06vw #fcf0dd;
+  color: transparent;
+  font-family: "Chicharito";
+  margin: 0;
+}
+
+.outlaws .outlaws-desc {
+  font-size: 36px;
+  color: #ead9be;
+  line-height: 1.2;
+  width: 40%;
+  margin: 0 auto;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.outlaws button {
+  background-color: #cb9a59;
+  text-transform: uppercase;
+  font-family: "Chicharito";
+  border-radius: 40px;
+  padding: 12px 30px;
+  color: #312113;
+  font-weight: 100;
+  cursor: pointer;
+  font-size: 20px;
+  margin: 0 auto;
+  display: flex;
+  border: none;
+  gap: 20px;
+}
+
+.outlows-img {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -65%);
+}
+
+.exploration {
+  padding-top: 12rem;
+  /* background-color: green; */
+  position: relative;
+}
+
+.exploration-img {
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+.exploration .explration-title {
+  font-size: 95px;
+  text-transform: uppercase;
+  font-family: "Chicharito";
+  color: #fcf0dd;
+  text-align: center;
+  line-height: 75px;
+  margin: 0;
+}
+
+.exploration .exploration-idea {
+  color: #ead9be;
+  text-transform: uppercase;
+  font-size: 29px;
+  text-align: center;
+  margin: 0;
+}
+
+.exploration-product-container {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  padding-top: 13rem;
+}
+
+.exploration-product {
+  padding: 1rem;
+  border-bottom: 3px dashed rgb(248, 223, 182, 0.7);
+  border-radius: 50%;
+  position: relative;
+}
+
+.exploration-img-shade-1 {
+  position: absolute;
+  width: 280px;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.exploration-img-shade-2 {
+  position: absolute;
+  width: 280px;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.exploration-shade-title {
+  position: absolute;
+  top: -5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.exploration-shade-title p {
+  color: #fbdeb4;
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: bolder;
+  padding-top: 5px;
+  font-family: "Chicharito";
+}
+
+.exploration-shade-title button {
+  background-color: #cb9a59;
+  border-radius: 50px;
+  padding: 8px 9px;
+  color: #312113;
+  cursor: pointer;
+  border: none;
+  vertical-align: text-bottom;
+  text-align: center;
+}
+
+.exploration-button {
+  /* background-color: green; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20rem;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.exploration-button button {
+  color: #312113;
+  font-size: 20px;
+  text-transform: uppercase;
+  padding: 17px 30px;
+  border-radius: 40px;
+  display: flex;
+  gap: 20px;
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.exploration-arrow-slider {
+  display: flex;
+  background-color: rgb(67 51 37 / 42%);
+  padding: 6px 10px;
+  border-radius: 2rem;
+  align-self: self-end;
+  gap: 25px;
+  position: relative;
+}
+
+.exploration-right-arrow {
+  background-color: rgb(210 180 140 / 18%);
+  /* background-color: rgb(203, 154, 89); */
+  cursor: pointer;
+  border-radius: 50px;
+  width: 55px;
+  height: 55px;
+  line-height: 1;
+  position: relative;
+}
+
+.exploration-left-arrow {
+  background-color: rgb(203, 154, 89);
+  cursor: pointer;
+  border-radius: 50px;
+  width: 55px;
+  height: 55px;
+  line-height: 1;
+  position: relative;
+}
+
+.exploration-right-arrow-icon,
+.exploration-left-arrow-icon {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+}
+
+.footer {
+  margin-top: 13rem;
+}
+
+.footer-layer-one {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* border-top: 2px dashed #5c3520;
+  border-bottom: 2px dashed #5c3520; */
+  margin: 0 4rem;
+  position: relative;
+}
+
+.footer-layer-one .footer-title p:first-child {
+  font-size: 70px;
+  text-transform: uppercase;
+  font-family: "Chicharito";
+  /* color: #fcf0dd; */
+  margin: 0;
+}
+
+.footer-layer-one .footer-title p:last-child {
+  color: #fbdeb4;
+  font-size: 20px;
+  /* text-transform: uppercase; */
+  /* font-weight: bolder; */
+  margin: 0;
+  /* padding-top: 5px; */
+  /* font-family: "Chicharito"; */
+}
+
+.email-box {
+  position: relative;
+  margin-top: 4rem;
+}
+
+.email-box input {
+  width: 350px;
+  background-color: rgb(210 180 140 / 18%);
+  height: 60px;
+  border: none;
+  font-size: 18px;
+  font-family: "Chicharito";
+  color: #977d67;
+  outline: none;
+  box-shadow: none;
+  padding: 2.5rem 0;
+  text-transform: uppercase;
+  /* font-weight: bold; */
+  padding-left: 25px;
+  border-radius: 50px;
+}
+
+.email-box input::placeholder {
+  color: #977d67;
+}
+
+.email-box button {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  transform: translate(-10%, 14%);
+  color: #312115;
+  padding: 20px 27px;
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: #cb9a59;
+  border-radius: 50px;
+  text-transform: uppercase;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.footer-hat {
+  width: 350px;
+  margin: 0;
+  /* position: absolute; */
+}
+
+.footer-top-border {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  width: 75vw;
+  /* padding: 3rem 0; */
+  border-top: 2px dashed #5c3520;
+  z-index: -1;
+}
+
+.footer-top-layer-bottom-border {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  width: 75vw;
+  /* padding: 3rem 0; */
+  border-top: 2px dashed #5c3520;
+  z-index: -1;
+}
+
+.footer-layer-two {
+  position: relative;
+  /* background-color: #d14545; */
+}
+
+.footer-layer-two ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 2rem;
+  padding-left: 0;
+  margin-left: -20px;
+}
+
+.footer-layer-two ul li {
+  font-size: 18px;
+  color: #fbeedb;
+  /* background-color: #d14545; */
+  /* font-weight: 600; */
+  font-family: "Chicharito";
+  list-style-type: none;
+  cursor: pointer;
+  padding: 1rem 0;
+}
+
+.footer-layer-two ul li:hover {
+  color: #cb9a58;
+  transition: opacity 0.7s ease-out;
+}
+
+.footer-layer-two-border-bottom {
+  position: absolute;
+  bottom: -20%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  width: 75vw;
+  border-top: 2px dashed #5c3520;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-links li {
+  font-size: 14px;
+  color: #fbeedb;
+  font-family: "Chicharito";
+  list-style-type: none;
+  cursor: pointer;
+  /* padding: 1rem 0; */
+}
+
+.footer-links li:hover {
+  color: #cb9a58;
+  transition: opacity 0.7s ease-out;
+}
+
+.footer-social-links {
+  display: flex;
+  gap: 10px;
+}
+
+.footer-social-links li {
+  list-style-type: none;
+  cursor: pointer;
+}
+
+.footer-social-links li img {
+  width: 50px;
+}
